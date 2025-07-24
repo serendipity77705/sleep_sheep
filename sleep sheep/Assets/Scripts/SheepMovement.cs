@@ -2,22 +2,28 @@ using UnityEngine;
 
 public class SheepMovement : MonoBehaviour
 {
-    public float moveDistance = 2f; // distance to move up or down
+    private float moveDistance = 1f; // distance to move up or down
+    private int currentStep = 0;
+    private const int MAX_STEPS = 3;
 
     void Start(){
         // Initialize sheep position or any other setup if needed
-        Debug.Log("SheepMovement script started");
+        Debug.Log("Starting position: " + transform.position);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) && currentStep > -MAX_STEPS)
         {
             Move(Vector3.down);
+            currentStep--;
+            Debug.Log($"Current step: {currentStep}");
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && currentStep < MAX_STEPS)
         {
             Move(Vector3.up);
+            currentStep++;
+            Debug.Log($"Current step: {currentStep}");
         }
     }
 
