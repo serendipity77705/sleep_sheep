@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cool_sheep_0: 3976879042223148621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -61,12 +61,26 @@ public class SheepMovement : MonoBehaviour
     void CollectItem(GameObject item, Vector2 newPosition)
     {
         totalItemCount = goodItemCount + badItemCount;
-        // Shrink item
-        item.transform.localScale = new Vector2(0.75f, 0.75f);
 
         // Move to the corner
-        item.transform.position = newPosition;
-
+        if (item.CompareTag("Good"))
+        {
+            // Shrink item
+            item.transform.localScale = new Vector2(0.75f, 0.75f);
+            // Move to collection area
+            item.transform.position = newPosition;
+            // Disable MovingObject script for collectible items
+            MovingObject movingScript = item.GetComponent<MovingObject>();
+            if (movingScript != null)
+            {
+                movingScript.enabled = false;
+            }
+        }
+        else if (item.CompareTag("Bad"))
+        {
+            Destroy(item);
+            return;
+        }
         // Disable future collisions
         Collider2D col = item.GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
