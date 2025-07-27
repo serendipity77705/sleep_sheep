@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0c2a6c484e8d74f4db008ce5a3dbe03b
+guid: 42ce4dcfef3bc4e938881dcdb9934b53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4648955557218390544
-    second: RainbowFrame1_0
+      213: -5026407891420688476
+    second: rainbowSpriteSheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RainbowFrame1_0
+      name: rainbowSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 28
+        y: 0
         width: 640
-        height: 227
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fd6b6b4d879b7fb0800000000000000
-      internalID: -4648955557218390544
+      spriteID: 4af46af57ac9e3ab0800000000000000
+      internalID: -5026407891420688476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rainbowSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adba66a9146084ff2b857c236079917e
+      internalID: -1405044281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rainbowSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f4a86b4318a45d5adb77c50217d65d
+      internalID: -1502023423
       vertices: []
       indices: 
       edges: []
@@ -138,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3700a5d822ffb4019aaf0baf836491ef
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +191,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rainbowSpriteSheet_0: -5026407891420688476
+      rainbowSpriteSheet_1: -1405044281
+      rainbowSpriteSheet_2: -1502023423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
