@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SheepMovement : MonoBehaviour
 {
@@ -6,8 +7,17 @@ public class SheepMovement : MonoBehaviour
     private int currentStep = 0;
     private const int MAX_STEPS = 3;
 
+    private Vector2 startPosGood = new Vector2(0f, 4f); // Starting point for good items
+    private Vector2 startPosBad = new Vector2(0f, -3f);  // Starting point for bad items
+    private float itemSpacing = 0.5f; // Space between collected items
+
+    private int goodItemCount = 0;
+    private int badItemCount = 0;
+    private int totalItemCount = 0;
+
+    private Vector2 collectedItemLocation = new Vector2(-6.5f, -4.5f);
+
     void Start(){
-        // Initialize sheep position or any other setup if needed
         Debug.Log("Starting position: " + transform.position);
     }
 
@@ -34,15 +44,35 @@ public class SheepMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Good")) {
+        GameObject item = collision.gameObject;
+
+        if (item.CompareTag("Good")) {
             Debug.Log("Collision with good object detected. Good Job!");
-            Destroy(collision.gameObject);
+            CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * totalItemCount, 0));
+            goodItemCount++;
         } 
-        else if (collision.gameObject.CompareTag("Bad")) {
+        else if (item.CompareTag("Bad")) {
             Debug.Log("Collision with bad object detected. Oh no!");
-            Destroy(collision.gameObject);
+            CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * totalItemCount, 0));
+            badItemCount++;
         }
     }
 
-}
+    void CollectItem(GameObject item, Vector2 newPosition)
+    {
+        totalItemCount = goodItemCount + badItemCount;
+        // Shrink item
+        item.transform.localScale = new Vector2(0.75f, 0.75f);
 
+        // Move to the corner
+        item.transform.position = newPosition;
+
+        // Disable future collisions
+        Collider2D col = item.GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        // Stop physics simulation
+        Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
+        if (rb != null) rb.simulated = false;
+    }
+}
