@@ -211,52 +211,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
   m_PrefabInstance: {fileID: 4018142354656097230}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &310282577
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310282571}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.031919822}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.56, y: 0.34}
-    newSize: {x: 1.35, y: 1.34}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.29784098}
-  m_EdgeRadius: 0
 --- !u!50 &310282578
 Rigidbody2D:
   serializedVersion: 5
@@ -339,6 +293,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &310282583
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310282571}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.56, y: 0.34}
+    newSize: {x: 1.35, y: 1.34}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.13826254, y: 0.13488346}
+      - {x: -0.17254236, y: 0.13137181}
+      - {x: -0.26595348, y: 0.02371291}
+      - {x: -0.27524576, y: 0.006757997}
+      - {x: -0.27711242, y: -0.032353953}
+      - {x: -0.2661692, y: -0.04531637}
+      - {x: -0.22732522, y: -0.04478283}
+      - {x: -0.21722461, y: -0.102441736}
+      - {x: -0.18989937, y: -0.1337129}
+      - {x: -0.1262599, y: -0.15042235}
+      - {x: 0.083389, y: -0.15191065}
+      - {x: 0.11010047, y: -0.13956568}
+      - {x: 0.15726554, y: -0.1119693}
+      - {x: 0.15806141, y: -0.0666896}
+      - {x: 0.21913126, y: -0.06458157}
+      - {x: 0.2459385, y: -0.03581229}
+      - {x: 0.2748264, y: 0.015654087}
+      - {x: 0.2775933, y: 0.054857336}
+      - {x: 0.23781016, y: 0.12131197}
+      - {x: 0.2261546, y: 0.12829447}
+  m_UseDelaunayMesh: 0
 --- !u!1 &439702342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,10 +1370,10 @@ PrefabInstance:
       addedObject: {fileID: 310282578}
     - targetCorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 310282577}
+      addedObject: {fileID: 310282579}
     - targetCorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 310282579}
+      addedObject: {fileID: 310282583}
   m_SourcePrefab: {fileID: 100100000, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
