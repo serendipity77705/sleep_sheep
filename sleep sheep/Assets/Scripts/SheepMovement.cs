@@ -23,13 +23,13 @@ public class SheepMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && currentStep > -MAX_STEPS)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))  && currentStep > -MAX_STEPS)
         {
             Move(Vector3.down);
             currentStep--;
             Debug.Log($"Current step: {currentStep}");
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && currentStep < MAX_STEPS)
+        else if ((Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W)) && currentStep < MAX_STEPS)
         {
             Move(Vector3.up);
             currentStep++;
