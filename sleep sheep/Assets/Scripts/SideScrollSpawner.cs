@@ -24,6 +24,16 @@ public class SideScrollSpawner : MonoBehaviour
     private float screenRightEdge;
     private float screenLeftEdge;
     private GameObject currentObject;         // Track the current spawned object
+    private float[] spawnYPositions = new float[] 
+    { 
+        3.12f,  // Top
+        2.12f,
+        1.12f,
+        0.12f,  // Middle
+        -0.88f,
+        -1.88f,
+        -2.88f  // Bottom
+    };
     
     void Start()
     {
@@ -75,10 +85,13 @@ public class SideScrollSpawner : MonoBehaviour
     {
         if (objectToSpawn == null) return;
         
+        // Get random Y position from array
+        float randomY = spawnYPositions[Random.Range(0, spawnYPositions.Length)];
+        
         // Calculate spawn position (just off the right side of screen)
         Vector3 spawnPos = new Vector3(
             screenRightEdge + spawnOffsetX,
-            randomizeY ? Random.Range(minY, maxY) : 0f,
+            randomY,
             0f
         );
         
