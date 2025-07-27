@@ -8,6 +8,8 @@ public class SideScrollSpawner : MonoBehaviour
     public GameObject objectToSpawn;
     public float delayAfterDespawn = 1f;      // Wait time after object despawns
     public bool autoSpawn = true;
+    [SerializeField] private float minInitialDelay = 4f;  // Minimum initial spawn delay
+    [SerializeField] private float maxInitialDelay = 10f; // Maximum initial spawn delay
     
     [Header("Movement Settings")]
     public float moveSpeed = 5f;              // Speed objects move left
@@ -30,7 +32,8 @@ public class SideScrollSpawner : MonoBehaviour
         
         if (autoSpawn)
         {
-            StartCoroutine(SpawnRoutine());
+            float randomDelay = Random.Range(minInitialDelay, maxInitialDelay);
+            StartCoroutine(DelayedSpawnStart(randomDelay));
         }
     }
     
@@ -42,6 +45,12 @@ public class SideScrollSpawner : MonoBehaviour
         
         screenRightEdge = rightEdge.x;
         screenLeftEdge = leftEdge.x;
+    }
+
+    IEnumerator DelayedSpawnStart(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(SpawnRoutine());
     }
     
     IEnumerator SpawnRoutine()
