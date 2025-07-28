@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class SheepMovement : MonoBehaviour
 {
+    [SerializeField] private HealthBar healthBar;
     private float moveDistance = 1f; // distance to move up or down
     private int currentStep = 0;
     private const int MAX_STEPS = 3;
@@ -50,11 +51,15 @@ public class SheepMovement : MonoBehaviour
             Debug.Log("Collision with good object detected. Good Job!");
             CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * totalItemCount, 0));
             goodItemCount++;
-        } 
+        }
         else if (item.CompareTag("Bad")) {
             Debug.Log("Collision with bad object detected. Oh no!");
             CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * totalItemCount, 0));
-            badItemCount++;
+            if (healthBar != null)
+            {
+                healthBar.DecreaseHealth(10);
+                healthBar.UpdateHealthDisplay();
+            }
         }
     }
 
