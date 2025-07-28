@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 450d5ad68a8ae48f49412d8a75124e2e
+guid: df934905e841a4f0b9ab2729895b55a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1850988681521255122
-    second: Coffee_0
+      213: 7014128437342438833
+    second: IMG_0632_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coffee_0
+      name: IMG_0632_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 23
-        height: 25
+        x: 2
+        y: 1
+        width: 20
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2d28a2e997ff46e0800000000000000
-      internalID: -1850988681521255122
+      spriteID: 1b503ccb6a0375160800000000000000
+      internalID: 7014128437342438833
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Coffee_0: -1850988681521255122
+      IMG_0632_0: 7014128437342438833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
