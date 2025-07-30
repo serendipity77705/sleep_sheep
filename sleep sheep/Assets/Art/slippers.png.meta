@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -6456719190766466825
     second: slippers_0
+  - first:
+      213: 9122043935625509562
+    second: slippers_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,10 +119,10 @@ TextureImporter:
       name: slippers_0
       rect:
         serializedVersion: 2
-        x: 67
-        y: 69
-        width: 126
-        height: 123
+        x: 2
+        y: 4
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +137,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: slippers_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abaf678f0a2089e70800000000000000
+      internalID: 9122043935625509562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +174,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       slippers_0: -6456719190766466825
+      slippers_1: 9122043935625509562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

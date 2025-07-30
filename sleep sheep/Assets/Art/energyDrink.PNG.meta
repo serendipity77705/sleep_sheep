@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8c2d2b9d4890349aca5a4e0aaff36dbf
+guid: 97f76406769e440da8e617a3ebd03e5d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8878088185706026076
-    second: pause_0
+      213: 7328140473457635117
+    second: energyDrink_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pause_0
+      name: energyDrink_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 32
-        height: 27
+        x: 4
+        y: 0
+        width: 16
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ab666e45d1bac480800000000000000
-      internalID: -8878088185706026076
+      spriteID: d2fea983fe8c2b560800000000000000
+      internalID: 7328140473457635117
       vertices: []
       indices: 
       edges: []
