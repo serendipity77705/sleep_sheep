@@ -13,8 +13,6 @@ public class SheepMovement : MonoBehaviour
     private float itemSpacing = 1f; // Space between collected items
 
     private int goodItemCount = 0;
-    private int badItemCount = 0;
-    private int totalItemCount = 0;
 
     private Vector2 collectedItemLocation = new Vector2(-6.5f, -4.5f);
 
@@ -49,12 +47,12 @@ public class SheepMovement : MonoBehaviour
 
         if (item.CompareTag("Good")) {
             Debug.Log("Collision with good object detected. Good Job!");
-            CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * totalItemCount, 0));
             goodItemCount++;
+            CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * goodItemCount, 0));
         }
         else if (item.CompareTag("Bad")) {
             Debug.Log("Collision with bad object detected. Oh no!");
-            CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * totalItemCount, 0));
+            CollectItem(item, collectedItemLocation);
             if (healthBar != null)
             {
                 healthBar.DecreaseHealth(10);
@@ -65,8 +63,6 @@ public class SheepMovement : MonoBehaviour
 
     void CollectItem(GameObject item, Vector2 newPosition)
     {
-        totalItemCount = goodItemCount + badItemCount;
-
         // Move to the corner
         if (item.CompareTag("Good"))
         {
