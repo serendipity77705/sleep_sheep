@@ -47,8 +47,8 @@ public class SheepMovement : MonoBehaviour
 
         if (item.CompareTag("Good")) {
             Debug.Log("Collision with good object detected. Good Job!");
-            goodItemCount++;
             CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * goodItemCount, 0));
+            goodItemCount++;
         }
         else if (item.CompareTag("Bad")) {
             Debug.Log("Collision with bad object detected. Oh no!");
