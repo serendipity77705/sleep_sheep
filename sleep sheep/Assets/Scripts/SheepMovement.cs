@@ -10,7 +10,7 @@ public class SheepMovement : MonoBehaviour
 
     private Vector2 startPosGood = new Vector2(0f, 4f); // Starting point for good items
     private Vector2 startPosBad = new Vector2(0f, -3f);  // Starting point for bad items
-    private float itemSpacing = 0.5f; // Space between collected items
+    private float itemSpacing = 1f; // Space between collected items
 
     private int goodItemCount = 0;
     private int badItemCount = 0;
@@ -71,7 +71,8 @@ public class SheepMovement : MonoBehaviour
         if (item.CompareTag("Good"))
         {
             // Shrink item
-            item.transform.localScale = new Vector2(0.75f, 0.75f);
+            // item.transform.localScale = new Vector2(0.75f, 0.75f);
+            Debug.Log("Sending item to collection area: " + newPosition);
             // Move to collection area
             item.transform.position = newPosition;
             // Disable MovingObject script for collectible items
