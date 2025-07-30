@@ -36,11 +36,13 @@ public class PauseManager : MonoBehaviour
     
     public void ResumeGame()
     {
-        SceneManager.LoadScene("CollectionScene");
+        // SceneManager.LoadScene("CollectionScene");
+        // SceneManager.UnloadSceneAsync("PauseScene");
+        SceneManager.UnloadSceneAsync("PauseScene");
     }
 
     public void PauseGame()
     {
-        SceneManager.LoadScene("PauseScene");
+        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 }
