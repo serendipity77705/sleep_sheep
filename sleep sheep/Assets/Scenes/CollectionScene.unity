@@ -451,7 +451,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 938798496}
   delayAfterDespawn: 1
   autoSpawn: 1
-  minInitialDelay: 4
+  minInitialDelay: 2
   maxInitialDelay: 10
   moveSpeed: 5
   spawnOffsetX: 1
@@ -689,7 +689,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 454940006}
   delayAfterDespawn: 1
   autoSpawn: 1
-  minInitialDelay: 4
+  minInitialDelay: 2
   maxInitialDelay: 10
   moveSpeed: 5
   spawnOffsetX: 1
@@ -1622,7 +1622,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1073173784}
   delayAfterDespawn: 1
   autoSpawn: 1
-  minInitialDelay: 4
+  minInitialDelay: 2
   maxInitialDelay: 10
   moveSpeed: 5
   spawnOffsetX: 1

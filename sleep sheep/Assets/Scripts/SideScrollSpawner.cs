@@ -8,7 +8,7 @@ public class SideScrollSpawner : MonoBehaviour
     public GameObject objectToSpawn;
     public float delayAfterDespawn = 1f;      // Wait time after object despawns
     public bool autoSpawn = true;
-    [SerializeField] private float minInitialDelay = 4f;  // Minimum initial spawn delay
+    [SerializeField] private float minInitialDelay = 2f;  // Minimum initial spawn delay
     [SerializeField] private float maxInitialDelay = 10f; // Maximum initial spawn delay
     
     [Header("Movement Settings")]
