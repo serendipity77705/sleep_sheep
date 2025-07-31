@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EnergyDrinkGlowGif_0: -6460710088043075448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

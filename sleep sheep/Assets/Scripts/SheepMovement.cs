@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SheepMovement : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class SheepMovement : MonoBehaviour
             Move(Vector3.up);
             currentStep++;
             Debug.Log($"Current step: {currentStep}");
+        }
+
+        if (!healthBar.IsAlive())
+        {
+            SceneManager.LoadScene("GameOverScene");
+
         }
     }
 
