@@ -12,7 +12,7 @@ public class SheepMovement : MonoBehaviour
     private Vector2 startPosBad = new Vector2(0f, -3f);  // Starting point for bad items
     private float itemSpacing = 1f; // Space between collected items
 
-    private int goodItemCount = 0;
+    public int goodItemCount = 0;
 
     private Vector2 collectedItemLocation = new Vector2(-6.5f, -4.5f);
 

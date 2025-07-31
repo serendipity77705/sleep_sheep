@@ -536,6 +536,18 @@ MonoBehaviour:
   decayDelay: 1
   healthBarScrollbar: {fileID: 196950419}
   pauseGameOnDeath: 1
+--- !u!114 &310282595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310282571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc3e43b085004c45bbd45f90a5f3b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368339822
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,6 +3412,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 310282591}
+    - targetCorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 310282595}
   m_SourcePrefab: {fileID: 100100000, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

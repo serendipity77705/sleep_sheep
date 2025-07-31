@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseScene.unity
     guid: e9a65a9df1c7c46ea85a2cefd65c2ecc
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 337ca0f63e3c84deaa9f3bf0dab2d9d1
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 5149c2e3fb60e41ae8bbdc05d2c9e0d1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
