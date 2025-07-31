@@ -3,32 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    private bool isPausedScene;
+    private bool isPaused = false;
     public GameObject pauseMenuUI;
-
-    void Start()
-    {
-        // Detect whether we're in the PauseScene
-        isPausedScene = SceneManager.GetActiveScene().name == "PauseScene";
-        
-        if (!isPausedScene)
-            Time.timeScale = 1f;  // Normal speed
-        else
-            Time.timeScale = 0f;  // Game is paused
-    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isPausedScene)
+            if (isPaused)
             {
-                // Resume game: go back to gameplay scene
                 ResumeGame();
             }
             else
             {
-                // Pause game: go to pause scene
                 PauseGame();
             }
         }
@@ -36,14 +23,33 @@ public class PauseManager : MonoBehaviour
     
     public void ResumeGame()
     {
-        // SceneManager.LoadScene("CollectionScene");
-        // SceneManager.UnloadSceneAsync("PauseScene");
-        SceneManager.UnloadSceneAsync("PauseScene");
+        isPaused = false;
+        Time.timeScale = 1f;  // Resume normal speed
+        
+        // Hide pause menu if it exists
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(false);
+            
+        // Unload pause scene if it was loaded additively
+        if (SceneManager.GetSceneByName("PauseScene").isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("PauseScene");
+        }
     }
 
     public void PauseGame()
     {
-        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
-        Time.timeScale = 0.01f;  // Game is paused
+        isPaused = true;
+        Time.timeScale = 0f;  // Completely pause the game
+        
+        // Show pause menu if it exists
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(true);
+            
+        // Load pause scene additively if not already loaded
+        if (!SceneManager.GetSceneByName("PauseScene").isLoaded)
+        {
+            SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        }
     }
 }
