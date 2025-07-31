@@ -44,5 +44,6 @@ public class PauseManager : MonoBehaviour
     public void PauseGame()
     {
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        Time.timeScale = 0.01f;  // Game is paused
     }
 }

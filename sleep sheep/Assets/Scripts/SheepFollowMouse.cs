@@ -8,6 +8,7 @@ public class FollowMouse : MonoBehaviour
 
     [SerializeField]
     private float maxSpeed = 15f;
+    private float stopDistance = 3f;
 
     void Start()
     {
@@ -16,18 +17,21 @@ public class FollowMouse : MonoBehaviour
 
     void Update()
     {
-        FollowMousePositionDelayed(maxSpeed);
+        FollowMousePositionWithStop(maxSpeed);
     }
 
-    private void FollowMousePosition()
+    private void FollowMousePositionWithStop(float maxSpeed)
     {
-        transform.position = GetWorldPositionFromMouse();
-    }
+        Vector2 mousePos = GetWorldPositionFromMouse();
+        float distance = Vector2.Distance(transform.position, mousePos);
 
-    private void FollowMousePositionDelayed(float maxSpeed)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, GetWorldPositionFromMouse(),
-            maxSpeed * Time.deltaTime);
+        if (distance > stopDistance)
+        {
+            // Only move if the sheep is farther than stopDistance
+            transform.position = Vector2.MoveTowards(transform.position, mousePos,
+                maxSpeed * Time.deltaTime);
+        }
+        // Else, don't move — sheep stops and leaves space for the button
     }
 
     private Vector2 GetWorldPositionFromMouse()
