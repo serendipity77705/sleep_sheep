@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EnergyDrinkSpriteSheet_0: 8048851385428528586
+      EnergyDrinkSpriteSheet_1: -2372426767094170532
+      EnergyDrinkSpriteSheet_2: -4643100020462767500
+      EnergyDrinkSpriteSheet_3: -1893261242049253855
+      EnergyDrinkSpriteSheet_4: -1609465619453072948
+      EnergyDrinkSpriteSheet_5: 8678714016749434536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PhoneSpriteSheet_0: 7770107048235512914
+      PhoneSpriteSheet_1: 6817828697389343142
+      PhoneSpriteSheet_2: -4577659576081560046
+      PhoneSpriteSheet_3: 6739358327311774216
+      PhoneSpriteSheet_4: 428525756707629792
+      PhoneSpriteSheet_5: 6717364027979830981
+      PhoneSpriteSheet_6: -6680385140576920676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
