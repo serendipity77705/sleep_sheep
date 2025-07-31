@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class SheepMovement : MonoBehaviour
 {
-    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private TimeBasedHealth healthBar;
     private float moveDistance = 1f; // distance to move up or down
     private int currentStep = 0;
     private const int MAX_STEPS = 3;
@@ -55,8 +55,7 @@ public class SheepMovement : MonoBehaviour
             CollectItem(item, collectedItemLocation);
             if (healthBar != null)
             {
-                healthBar.DecreaseHealth(10);
-                healthBar.UpdateHealthDisplay();
+                healthBar.TakeDamage(10);
             }
         }
     }
