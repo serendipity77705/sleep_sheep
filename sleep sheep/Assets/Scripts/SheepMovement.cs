@@ -45,7 +45,8 @@ public class SheepMovement : MonoBehaviour
     {
         GameObject item = collision.gameObject;
 
-        if (item.CompareTag("Good")) {
+        if (item.CompareTag("Good"))
+        {
             Debug.Log("Collision with good object detected. Good Job!");
             ItemIdentifier itemId = item.GetComponent<ItemIdentifier>();
             if (itemId != null)
@@ -54,8 +55,13 @@ public class SheepMovement : MonoBehaviour
             }
             CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * goodItemCount, 0));
             goodItemCount++;
+            if (healthBar != null)
+            {
+                healthBar.AddHealth(5);
+            }
         }
-        else if (item.CompareTag("Bad")) {
+        else if (item.CompareTag("Bad"))
+        {
             Debug.Log("Collision with bad object detected. Oh no!");
             CollectItem(item, collectedItemLocation);
             if (healthBar != null)
