@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,10 @@ public class MultiItemSpawner : MonoBehaviour
     public float minY = -4f;                  // Min Y spawn position
     public float maxY = 4f;                   // Max Y spawn position
     
+    [Header("Win Condition")]
+    public string winSceneName = "WinScreen";  // Name of the win scene
+    public float winDelay = 2f;               // Delay before loading win scene
+    
     private Camera cam;
     private float screenRightEdge;
     private float screenLeftEdge;
@@ -52,10 +57,20 @@ public class MultiItemSpawner : MonoBehaviour
     // Static list to track collected good items across all spawners
     private static HashSet<GameObject> collectedGoodItems = new HashSet<GameObject>();
     
+    // Static reference to track total good items across all spawners
+    private static int totalGoodItems = 0;
+    private static bool winSceneLoading = false;
+    
     void Start()
     {
         cam = Camera.main;
         CalculateScreenBounds();
+        
+        // Count total good items if this is a good spawner
+        if (spawnerType == SpawnerType.Good)
+        {
+            totalGoodItems += goodItems.Length;
+        }
         
         if (autoSpawn)
         {
@@ -173,20 +188,66 @@ public class MultiItemSpawner : MonoBehaviour
     public static void MarkGoodItemAsCollected(GameObject itemPrefab)
     {
         collectedGoodItems.Add(itemPrefab);
-        Debug.Log($"Good item {itemPrefab.name} marked as collected. Total collected: {collectedGoodItems.Count}");
+        Debug.Log($"Good item {itemPrefab.name} marked as collected. Total collected: {collectedGoodItems.Count}/{totalGoodItems}");
+        
+        // Check if all good items have been collected
+        if (collectedGoodItems.Count >= totalGoodItems && !winSceneLoading)
+        {
+            Debug.Log("All good items collected! Loading WinScene...");
+            LoadWinScene();
+        }
+    }
+    
+    // Load the win scene
+    private static void LoadWinScene()
+    {
+        winSceneLoading = true;
+        
+        // Find a spawner to get the win scene name and delay
+        MultiItemSpawner spawner = FindObjectOfType<MultiItemSpawner>();
+        if (spawner != null)
+        {
+            spawner.StartCoroutine(spawner.LoadWinSceneCoroutine());
+        }
+        else
+        {
+            // Fallback if no spawner found
+            SceneManager.LoadScene("WinScreen");
+        }
+    }
+    
+    private IEnumerator LoadWinSceneCoroutine()
+    {
+        Debug.Log($"Loading {winSceneName} in {winDelay} seconds...");
+        yield return new WaitForSeconds(winDelay);
+        SceneManager.LoadScene(winSceneName);
     }
     
     // Call this to reset collected items (for new game/level restart)
     public static void ResetCollectedItems()
     {
         collectedGoodItems.Clear();
+        totalGoodItems = 0;
+        winSceneLoading = false;
         Debug.Log("Collected items list reset");
     }
     
     // Check if all good items have been collected
     public bool AllGoodItemsCollected()
     {
-        return spawnerType == SpawnerType.Good && collectedGoodItems.Count >= goodItems.Length;
+        return collectedGoodItems.Count >= totalGoodItems;
+    }
+    
+    // Get total number of good items across all spawners
+    public static int GetTotalGoodItems()
+    {
+        return totalGoodItems;
+    }
+    
+    // Get number of collected good items
+    public static int GetCollectedGoodItemsCount()
+    {
+        return collectedGoodItems.Count;
     }
     
     // Get list of remaining uncollected good items

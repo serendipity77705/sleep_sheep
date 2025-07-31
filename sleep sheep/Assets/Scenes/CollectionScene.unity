@@ -606,7 +606,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.25}
+    oldSize: {x: 0.17, y: 0.29}
     newSize: {x: 0.16, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -694,7 +694,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7328140473457635117, guid: 97f76406769e440da8e617a3ebd03e5d, type: 3}
+  m_Sprite: {fileID: -6460710088043075448, guid: 59d4ee658c15c475ba1d11894bbc012b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -702,7 +702,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &368339827
@@ -778,7 +778,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.25}
+    oldSize: {x: 0.18, y: 0.27}
     newSize: {x: 0.18, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -839,7 +839,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5161198346277617398, guid: a8eec3a066dc2455fa6cad5b92a235da, type: 3}
+  m_Sprite: {fileID: 9180251255188211490, guid: d6a99f0f47a7b404ea06ef4b24971dcc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -847,7 +847,7 @@ SpriteRenderer:
   m_Size: {x: 0.18, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &454940009
@@ -2384,7 +2384,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.23, y: 0.25}
+    oldSize: {x: 0.23, y: 0.26}
     newSize: {x: 0.23, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2499,7 +2499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1850988681521255122, guid: 450d5ad68a8ae48f49412d8a75124e2e, type: 3}
+  m_Sprite: {fileID: 1844692045553462434, guid: ed55a94d285734db895903db778f0a1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2507,7 +2507,7 @@ SpriteRenderer:
   m_Size: {x: 0.23, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1148685844
@@ -3027,6 +3027,8 @@ MonoBehaviour:
   randomizeY: 1
   minY: -4
   maxY: 4
+  winSceneName: WinScreen
+  winDelay: 2
 --- !u!4 &1686253362
 Transform:
   m_ObjectHideFlags: 0
@@ -3170,6 +3172,8 @@ MonoBehaviour:
   randomizeY: 1
   minY: -4
   maxY: 4
+  winSceneName: WinScreen
+  winDelay: 2
 --- !u!4 &1720090883
 Transform:
   m_ObjectHideFlags: 0

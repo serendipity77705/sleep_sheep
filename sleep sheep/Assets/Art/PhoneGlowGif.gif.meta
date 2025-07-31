@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PhoneGlowGif_0: 9180251255188211490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
