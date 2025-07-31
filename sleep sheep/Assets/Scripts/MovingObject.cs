@@ -6,10 +6,10 @@ public class MovingObject : MonoBehaviour
 {
     private float speed;
     private float despawnX;
-    private SideScrollSpawner spawner;
+    private MultiItemSpawner spawner;
     private bool isSetup = false;
 
-    public void SetupMovement(float moveSpeed, float despawnBoundary, SideScrollSpawner spawnerRef)
+    public void SetupMovement(float moveSpeed, float despawnBoundary, MultiItemSpawner spawnerRef)
     {
         speed = moveSpeed;
         despawnX = despawnBoundary;
@@ -36,19 +36,17 @@ public class MovingObject : MonoBehaviour
         // Notify spawner that this object is being destroyed
         if (spawner != null)
         {
-            spawner.OnObjectDespawned();
+            spawner.OnObjectDespawned(gameObject);
         }
 
         Destroy(gameObject);
     }
 
-    // Optional: Add this if you want objects to be destroyed when they hit something
-    void OnTriggerEnter2D(Collider2D other)
+    public void NotifySpawnerOfCollection()
     {
-        if (other.CompareTag("Player"))
+        if (spawner != null)
         {
-            // Handle collision with player (damage, etc.)
-            // DespawnObject(); // Uncomment if you want object to disappear on hit
+            spawner.OnObjectDespawned(gameObject);
         }
     }
 
@@ -57,7 +55,7 @@ public class MovingObject : MonoBehaviour
     {
         if (spawner != null)
         {
-            spawner.OnObjectDespawned();
+            spawner.OnObjectDespawned(gameObject);
         }
     }
 }

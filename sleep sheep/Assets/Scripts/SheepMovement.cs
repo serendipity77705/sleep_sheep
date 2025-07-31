@@ -47,6 +47,11 @@ public class SheepMovement : MonoBehaviour
 
         if (item.CompareTag("Good")) {
             Debug.Log("Collision with good object detected. Good Job!");
+            ItemIdentifier itemId = item.GetComponent<ItemIdentifier>();
+            if (itemId != null)
+            {
+                MultiItemSpawner.MarkGoodItemAsCollected(itemId.originalPrefab);
+            }
             CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * goodItemCount, 0));
             goodItemCount++;
         }
@@ -74,7 +79,14 @@ public class SheepMovement : MonoBehaviour
             MovingObject movingScript = item.GetComponent<MovingObject>();
             if (movingScript != null)
             {
+                movingScript.NotifySpawnerOfCollection();
                 movingScript.enabled = false;
+            }
+
+            ItemIdentifier itemId = item.GetComponent<ItemIdentifier>();
+            if (itemId != null)
+            {
+                MultiItemSpawner.MarkGoodItemAsCollected(itemId.originalPrefab);
             }
         }
         else if (item.CompareTag("Bad"))
