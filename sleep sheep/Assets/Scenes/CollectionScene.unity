@@ -153,9 +153,9 @@ RectTransform:
   - {fileID: 577259172}
   m_Father: {fileID: 639810113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231.2, y: 188.6}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -157.8, y: -30.399994}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196950419
@@ -536,18 +536,6 @@ MonoBehaviour:
   decayDelay: 1
   healthBarScrollbar: {fileID: 196950419}
   pauseGameOnDeath: 1
---- !u!114 &310282595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310282571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afc3e43b085004c45bbd45f90a5f3b7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &368339822
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +695,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8048851385428528586, guid: 55fe74203cff141eb9d13ba983b0b4d7, type: 3}
+  m_Sprite: {fileID: 8048851385428528586, guid: 1d3629ee33ef94b2fb11b0fd7f11fea2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -875,7 +863,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7770107048235512914, guid: e17da159110694a67a58af5ed7c13728, type: 3}
+  m_Sprite: {fileID: 7770107048235512914, guid: 380705087ff214a62b8ca4d4b64e7467, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2558,7 +2546,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7820627531754995390, guid: 60c725a507fe54a2698721425043c179, type: 3}
+  m_Sprite: {fileID: -7820627531754995390, guid: 2bb7827c2c105421380840d1af983e92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3485,9 +3473,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 310282591}
-    - targetCorrespondingSourceObject: {fileID: 568659280759073348, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 310282595}
   m_SourcePrefab: {fileID: 100100000, guid: a8f40b46f46f346e09fd99b5c7c0f8cc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
