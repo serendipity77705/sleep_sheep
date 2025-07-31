@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2ba5ef7bb280345c3814b599d80cc37f
+guid: 4e610edecee7844cb8642248fb39a2c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1231759266921103449
-    second: energyDrink1_0
+      213: 1844692045553462434
+    second: CoffeeGlowGif_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: energyDrink1_0
+      name: CoffeeGlowGif_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 31
-        height: 40
+        x: 8
+        y: 7
+        width: 23
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 950c0a1f686181110800000000000000
-      internalID: 1231759266921103449
+      spriteID: 2ace33f44a9a99910800000000000000
+      internalID: 1844692045553462434
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      energyDrink1_0: 1231759266921103449
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

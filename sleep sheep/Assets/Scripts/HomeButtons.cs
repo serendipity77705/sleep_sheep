@@ -24,4 +24,10 @@ public class HomeButtons : MonoBehaviour {
         Debug.Log("Instructions Button clicked");
         SceneManager.LoadScene("InstructionsScene");
     }
+
+    public void GoToIntro()
+    {
+        Debug.Log("Intro Button clicked");
+        SceneManager.LoadScene("IntroScene");
+    }
 }
