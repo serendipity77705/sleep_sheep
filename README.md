@@ -1,7 +1,7 @@
 # sleep_sheep
 Sleep Sheep game for ShiftKey Labs Unity course
 
-Collaborators: Malk Daboor, Iris Bar, Jenna Makin, Shaun Ramsey
+Collaborators: Malk Daboor, Iris Bar, Jenna Makin, Shaun Ramsay
 
 Theme: Colors
 
@@ -12,7 +12,7 @@ Instructions:
 3. To win: get all good items before sleepiness meter runs out.
 4. To lose: Run out of sleepiness before getting all items.
 
-To play:
+To play: https://shaunramsay.itch.io/sleeping-sheep
 
 When you start the game, you will be in the main menu. On it you can either go and play the game directly or read the instructions. If you click the instructions button you will be sent to the instructions scene where you will have the instrutions to play and a button to go back to the main menu. If you press play you will be sent to the game scene, where you can play. To pause the game, press space. You will then be shown the pause scene. You can either resume the game by clicking on the resume button or quitting (quitting has not been implemented yet).
 
