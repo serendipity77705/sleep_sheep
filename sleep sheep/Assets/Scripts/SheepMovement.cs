@@ -56,9 +56,13 @@ public class SheepMovement : MonoBehaviour
         {
             Debug.Log("Collision with good object detected. Good Job!");
             ItemIdentifier itemId = item.GetComponent<ItemIdentifier>();
-            if (itemId != null)
+            if (itemId != null && itemId.originalPrefab != null)
             {
                 MultiItemSpawner.MarkGoodItemAsCollected(itemId.originalPrefab);
+            }
+            else
+            {
+                Debug.LogWarning("Good item doesn't have ItemIdentifier or originalPrefab is null!");
             }
             CollectItem(item, collectedItemLocation + new Vector2(itemSpacing * goodItemCount, 0));
             goodItemCount++;
@@ -97,10 +101,6 @@ public class SheepMovement : MonoBehaviour
             }
 
             ItemIdentifier itemId = item.GetComponent<ItemIdentifier>();
-            if (itemId != null)
-            {
-                MultiItemSpawner.MarkGoodItemAsCollected(itemId.originalPrefab);
-            }
         }
         else if (item.CompareTag("Bad"))
         {

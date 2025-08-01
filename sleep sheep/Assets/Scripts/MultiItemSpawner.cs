@@ -37,7 +37,7 @@ public class MultiItemSpawner : MonoBehaviour
     
     [Header("Win Condition")]
     public string winSceneName = "WinScreen";  // Name of the win scene
-    public float winDelay = 2f;               // Delay before loading win scene
+    public float winDelay = 0.5f;               // Delay before loading win scene
     
     private Camera cam;
     private float screenRightEdge;
@@ -56,6 +56,9 @@ public class MultiItemSpawner : MonoBehaviour
     
     // Static list to track collected good items across all spawners
     private static HashSet<GameObject> collectedGoodItems = new HashSet<GameObject>();
+    
+    // Static list to track currently active good items (spawned but not yet collected)
+    private static HashSet<GameObject> activeGoodItems = new HashSet<GameObject>();
     
     // Static reference to track total good items across all spawners
     private static int totalGoodItems = 0;
@@ -109,7 +112,7 @@ public class MultiItemSpawner : MonoBehaviour
             }
             else if (spawnerType == SpawnerType.Good)
             {
-                Debug.Log("No more good items to spawn - all collected!");
+                Debug.Log("No more good items to spawn - all collected or active!");
                 yield break; // Stop spawning good items
             }
             
@@ -147,6 +150,10 @@ public class MultiItemSpawner : MonoBehaviour
                 itemId = spawnedObject.AddComponent<ItemIdentifier>();
             }
             itemId.SetOriginalPrefab(objectToSpawn);
+            
+            // Mark this prefab as currently active
+            activeGoodItems.Add(objectToSpawn);
+            Debug.Log($"Spawned good item: {objectToSpawn.name}. Now active: {activeGoodItems.Count}");
         }
         
         // Add the movement component
@@ -170,25 +177,30 @@ public class MultiItemSpawner : MonoBehaviour
         }
         else // Good items
         {
-            // Get uncollected good items
-            List<GameObject> uncollectedItems = goodItems.Where(item => !collectedGoodItems.Contains(item)).ToList();
+            // Get items that are neither collected nor currently active
+            List<GameObject> availableItems = goodItems.Where(item => 
+                !collectedGoodItems.Contains(item) && 
+                !activeGoodItems.Contains(item)).ToList();
             
-            if (uncollectedItems.Count == 0)
+            if (availableItems.Count == 0)
             {
-                Debug.Log("All good items have been collected!");
+                Debug.Log("No available good items to spawn (all collected or active)!");
                 return null; // No more items to spawn
             }
             
-            // Pick randomly from uncollected items
-            return uncollectedItems[Random.Range(0, uncollectedItems.Count)];
+            // Pick randomly from available items
+            return availableItems[Random.Range(0, availableItems.Count)];
         }
     }
     
     // Call this when a good item is collected (from your SheepMovement script)
     public static void MarkGoodItemAsCollected(GameObject itemPrefab)
     {
+        // Remove from active items and add to collected items
+        activeGoodItems.Remove(itemPrefab);
         collectedGoodItems.Add(itemPrefab);
-        Debug.Log($"Good item {itemPrefab.name} marked as collected. Total collected: {collectedGoodItems.Count}/{totalGoodItems}");
+        
+        Debug.Log($"Good item {itemPrefab.name} marked as collected. Active: {activeGoodItems.Count}, Collected: {collectedGoodItems.Count}/{totalGoodItems}");
         
         // Check if all good items have been collected
         if (collectedGoodItems.Count >= totalGoodItems && !winSceneLoading)
@@ -196,6 +208,13 @@ public class MultiItemSpawner : MonoBehaviour
             Debug.Log("All good items collected! Loading WinScene...");
             LoadWinScene();
         }
+    }
+    
+    // Call this when a good item despawns without being collected (goes off screen)
+    public static void MarkGoodItemAsNoLongerActive(GameObject itemPrefab)
+    {
+        activeGoodItems.Remove(itemPrefab);
+        Debug.Log($"Good item {itemPrefab.name} no longer active. Active count: {activeGoodItems.Count}");
     }
     
     // Load the win scene
@@ -227,6 +246,7 @@ public class MultiItemSpawner : MonoBehaviour
     public static void ResetCollectedItems()
     {
         collectedGoodItems.Clear();
+        activeGoodItems.Clear();
         totalGoodItems = 0;
         winSceneLoading = false;
         Debug.Log("Collected items list reset");
@@ -250,6 +270,12 @@ public class MultiItemSpawner : MonoBehaviour
         return collectedGoodItems.Count;
     }
     
+    // Get number of currently active good items
+    public static int GetActiveGoodItemsCount()
+    {
+        return activeGoodItems.Count;
+    }
+    
     // Get list of remaining uncollected good items
     public List<GameObject> GetUncollectedGoodItems()
     {
@@ -261,6 +287,16 @@ public class MultiItemSpawner : MonoBehaviour
     public void OnObjectDespawned(GameObject obj)
     {
         activeObjects.Remove(obj);
+        
+        // If this was a good item that despawned (went off screen), remove it from active list
+        if (obj != null)
+        {
+            ItemIdentifier itemId = obj.GetComponent<ItemIdentifier>();
+            if (itemId != null && itemId.originalPrefab != null)
+            {
+                MarkGoodItemAsNoLongerActive(itemId.originalPrefab);
+            }
+        }
     }
     
     // Get count of currently active objects

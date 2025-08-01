@@ -8,6 +8,7 @@ public class MovingObject : MonoBehaviour
     private float despawnX;
     private MultiItemSpawner spawner;
     private bool isSetup = false;
+    private bool hasNotifiedSpawner = false; // Prevent multiple notifications
 
     public void SetupMovement(float moveSpeed, float despawnBoundary, MultiItemSpawner spawnerRef)
     {
@@ -34,18 +35,20 @@ public class MovingObject : MonoBehaviour
     private void DespawnObject()
     {
         // Notify spawner that this object is being destroyed
-        if (spawner != null)
-        {
-            spawner.OnObjectDespawned(gameObject);
-        }
-
+        NotifySpawnerOnce();
         Destroy(gameObject);
     }
 
     public void NotifySpawnerOfCollection()
     {
-        if (spawner != null)
+        NotifySpawnerOnce();
+    }
+
+    private void NotifySpawnerOnce()
+    {
+        if (!hasNotifiedSpawner && spawner != null)
         {
+            hasNotifiedSpawner = true;
             spawner.OnObjectDespawned(gameObject);
         }
     }
@@ -53,9 +56,6 @@ public class MovingObject : MonoBehaviour
     // Safety check in case object gets destroyed by other means
     void OnDestroy()
     {
-        if (spawner != null)
-        {
-            spawner.OnObjectDespawned(gameObject);
-        }
+        NotifySpawnerOnce();
     }
 }

@@ -3097,7 +3097,7 @@ MonoBehaviour:
   minY: -4
   maxY: 4
   winSceneName: WinScreen
-  winDelay: 2
+  winDelay: 0.5
 --- !u!4 &1686253362
 Transform:
   m_ObjectHideFlags: 0
@@ -3242,7 +3242,7 @@ MonoBehaviour:
   minY: -4
   maxY: 4
   winSceneName: WinScreen
-  winDelay: 2
+  winDelay: 0.5
 --- !u!4 &1720090883
 Transform:
   m_ObjectHideFlags: 0
